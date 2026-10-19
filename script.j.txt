@@ -1,0 +1,20 @@
+const noBtn = document.getElementById('noBtn');
+const yesBtn = document.getElementById('yesBtn');
+
+let scale = 1; // Начальный размер кнопки "Нет"
+let yesScale = 1; // Начальный размер кнопки "Да"
+
+noBtn.addEventListener('click', () => {
+    // Уменьшаем кнопку "Нет"
+    scale -= 0.15;
+    if (scale < 0.2) scale = 0.2; // Чтобы совсем не исчезла
+    noBtn.style.transform = `scale(${scale})`;
+
+    // Опционально: увеличиваем кнопку "Да", чтобы она стала заманчивее
+    yesScale += 0.1;
+    yesBtn.style.transform = `scale(${yesScale})`;
+});
+
+yesBtn.addEventListener('click', () => {
+    alert('Ура! Кездескенше! ❤️');
+});
